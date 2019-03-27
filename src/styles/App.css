@@ -1,0 +1,37 @@
+.graphite-sidebar {
+  position: fixed;
+  left: 0;
+  width: 200px;
+  padding: 25px;
+  background: #eee;
+  height: 100vh;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.graphite-sidebar .pointer {
+  font-size: 12px;
+}
+
+.center {
+  text-align: center;
+}
+
+.content-center {
+  max-width: 85%!important;
+  margin: auto!important;
+}
+
+.margin-top-25 {
+  margin-top: 25px;
+}
+
+.margin-top-45 {
+  margin-top: 45px;
+}
+
+.margin-top-65 {
+  margin-top: 65px;
+}

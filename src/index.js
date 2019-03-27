@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { setGlobal } from 'reactn';
 import ReactDOM from 'react-dom';
-import './index.css';
+import 'semantic-ui-css/semantic.min.css'
+import './styles/App.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+
+setGlobal({
+    organization: {},
+    documents: [], 
+    files: [],
+    forms: [],
+    teams: []
+})
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
