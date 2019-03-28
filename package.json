@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "blockstack": "^19.0.0",
-    "radiks": "^0.2.0",
+    "radiks": "0.2.0-alpha.4",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-router-dom": "^5.0.0",

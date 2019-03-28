@@ -11,29 +11,31 @@ import { User } from 'radiks';
 import 'semantic-ui-css/semantic.min.css'
 import './styles/App.css';
 
-const blockstack = require('blockstack');
 
 class App extends Component {
-  componentDidMount() {
+
+  async componentDidMount() {
+    const { userSession } = this.global;
     if(localStorage.getItem('GROUP_MEMBERSHIPS_STORAGE_KEY')) {
       console.log("Radiks user")
     } else {
-      if(blockstack.isUserSignedIn()) {
-        // await User.createWithCurrentUser();
+      if(userSession.isUserSignedIn()) {
+        await User.createWithCurrentUser();
       }
     }
  
-    if (blockstack.isSignInPending()) {
-      blockstack.handlePendingSignIn().then(async (userData) => {
+    if (userSession.isSignInPending()) {
+      userSession.handlePendingSignIn().then(async () => {
         window.location = window.location.origin;
       });
     }
   }
 
   render() {
+    const { userSession } = this.global;
     return (
       <div>
-        {blockstack.isUserSignedIn() ? 
+        {userSession.isUserSignedIn() ? 
         <BrowserRouter>
           <div>
             <Route exact path='/' component={Documents} />
